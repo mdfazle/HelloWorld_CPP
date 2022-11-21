@@ -18,7 +18,6 @@ target_include_directories(test_main
 target_link_libraries(
   test_main
   GTest::gtest_main
-  ${INCLUDE_DIR}/Person
 )
 
 include(GoogleTest)
