@@ -20,4 +20,5 @@ class Person : private Human {
   int getAge() override;
   string getSex() override;
   void setName(string _name);
+  string getCountry();
 };
