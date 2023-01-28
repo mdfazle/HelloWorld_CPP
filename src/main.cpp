@@ -4,7 +4,6 @@
 #include "Person.h"
 
 int main(int, char **) {
-  std::shared_ptr<Person> person(new Person());
-  person->askName();
-  std::cout << "Hello " << person->getName() << std::endl;
+  shared_ptr<Person> person(new Person("Bob", 21, "male", "USA"));
+  cout << "Hello " << person->getName() << endl;
 }

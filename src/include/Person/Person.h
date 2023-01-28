@@ -1,19 +1,22 @@
-#include <string>
+#pragma once
+
+#include "human.h"
 
 /**
  * @class Person
  * @brief Implements a person class with the person's name.
  */
-class Person {
+class Person : private Human {
  private:
-  std::string name;
+  string country = "None";
 
  public:
   Person();
   ~Person();
-  Person(std::string &name);
-  std::string &getName();
-  void setName(std::string &name);
-  void sayHello();
-  void askName();
+  Person(string _name, int _age, string _sex, string _country);
+  string getName() override;
+  int getAge() override;
+  string getSex() override;
+  void setName(string _name);
+  string getCountry();
 };
