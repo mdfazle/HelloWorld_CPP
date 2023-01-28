@@ -20,9 +20,9 @@ set( CMAKE_LIBRARY_OUTPUT_DIRECTORY ${MAIN_PROJECT_DIR}/lib )
 
 set(INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
 
-set(SRC_HEADER_FILES ${INCLUDE_DIR}/Person/Person.h)
+set(SRC_HEADER_FILES ${INCLUDE_DIR}/Person/Person.h ${INCLUDE_DIR}/Human/Human.h)
 add_executable(HelloWorld main.cpp Person.cpp ${SRC_HEADER_FILES})
-target_include_directories(HelloWorld PRIVATE ${INCLUDE_DIR}/Person)
+target_include_directories(HelloWorld PRIVATE ${INCLUDE_DIR}/Person ${INCLUDE_DIR}/Human)
 
 add_subdirectory(test)
 
