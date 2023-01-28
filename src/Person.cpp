@@ -1,14 +1,11 @@
 #include "Person.h"
 
 #include <iostream>
+
 /**
  * @brief default constructor with no name passed.
  */
-Person::Person() {
-  name = "";
-  age = 0;
-  sex = "";
-};
+Person::Person() : Human("", 0, ""){};
 /**
  * @brief default destructor.
  */
@@ -19,37 +16,41 @@ Person::~Person() = default;
  * @return void
  */
 Person::Person(string _name, int _age, string _sex, string _country)
-    : country(_country) {
-  name = _name;
-  age = _age;
-  sex = _sex;
+    : country(_country), Human(_name, _age, _sex) {
 }
 /**
  * @brief Utility to set the name variable with a string.
  * @param name: a string reference object
  * @return void
  */
-void Person::setName(std::string _name) {
-  this->name = _name;
+void Person::setName(string _name) {
+  name = _name;
 }
 /**
  * @brief Utility to ter the value of the person's age.
  * @return age from person object
  */
 int Person::getAge() {
-  return this->age;
+  return age;
 }
 /**
  * @brief Utility to ter the value of the stored Sex variage.
  * @return sex from person object
  */
-std::string Person::getSex() {
-  return this->sex;
+string Person::getSex() {
+  return sex;
 }
 /**
  * @brief Utility to ter the value of the stored name.
  * @return name from person object
  */
-std::string Person::getName() {
-  return this->name;
+string Person::getName() {
+  return name;
+}
+/**
+ * @brief Utility to ter the value of the stored Country.
+ * @return Country from person object
+ */
+string Person::getCountry() {
+  return country;
 }
