@@ -1,8 +1,6 @@
-#include <string>
+#pragma once
 
 #include "human.h"
-
-using namespace std;
 
 /**
  * @class Person

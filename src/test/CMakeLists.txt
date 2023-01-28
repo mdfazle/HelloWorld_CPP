@@ -4,16 +4,21 @@ set( CMAKE_RUNTIME_OUTPUT_DIRECTORY ${MAIN_PROJECT_DIR}/bin/test )
 
 
 set(INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
-set(PERSON_HEADER_FILES ${INCLUDE_DIR}/Person/Person.h ${INCLUDE_DIR}/Human/human.h) 
+set(
+  PERSON_HEADER_FILES_DIR 
+    ${INCLUDE_DIR}/Person/ 
+    ${INCLUDE_DIR}/Human/
+    )
+     
 set(PERSON_CPP_FILES ${PROJECT_SOURCE_DIR}/Person.cpp)
 
 add_executable(
   test_main
   test_main.cpp
-  ${PERSON_CPP_FILES} ${PERSON_HEADER_FILES}
+  ${PERSON_CPP_FILES}
 )
 target_include_directories(test_main 
-    PRIVATE ${INCLUDE_DIR}/Person ${INCLUDE_DIR}/Human
+    PRIVATE ${PERSON_HEADER_FILES_DIR}
 )
 target_link_libraries(
   test_main
